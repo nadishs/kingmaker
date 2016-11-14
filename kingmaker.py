@@ -91,8 +91,7 @@ class Environment:
 			Environment.LevelMap[newxpos][newypos] = Classes.UClassD[unclass]
 			Environment.UnitMap[newxpos][newypos] = uunit
 		elif uunit.type == 'E':
-			temp = Classes.UClassD[unclass]
-			Environment.LevelMap[newxpos][newypos] = temp*10
+			Environment.LevelMap[newxpos][newypos] = Classes.UClassD[unclass]
 			Environment.UnitMap[newxpos][newypos] = uunit
 			#no other entities as of now....
 		Environment.LevelMap[xpos][ypos] = 0
@@ -146,7 +145,7 @@ class Player(Unit):
 					LevelEnv.updateMap(oldpos_x, oldpos_y, oldpos_x, oldpos_y-1, self, self.uclass)
 					self.position_x = oldpos_x
 					self.position_y = oldpos_y-1
-				
+
 				else:
 					# no player collision for now (only needed for multiplayer)
 					outcome = self.engage(oldpos_x, oldpos_y-1,LevelEnv)
@@ -163,7 +162,7 @@ class Player(Unit):
 					self.position_y = oldpos_y+1
 				else:
 					outcome = self.engage(oldpos_x, oldpos_y+1,LevelEnv)
-		return outcome 
+		return outcome
 
 	# player vs enemy fights!
 	def engage(self, x_pos, y_pos,LevelEnv):
@@ -175,13 +174,17 @@ class Player(Unit):
 
 		if pclass >= eclass:
 			Environment.UnitMap[x_pos][y_pos].status = 0
+			Environment.UnitMap[x_pos][y_pos].position_x = -1
+			Environment.UnitMap[x_pos][y_pos].position_y = -1
+			ename = Environment.UnitMap[x_pos][y_pos].name
 			self.experience += 10
 			pclass += 1
 			self.uclass = Classes.UClassL[pclass]
-			
+
 			LevelEnv.updateMap(oldpos_x, oldpos_y, x_pos, y_pos, self, self.uclass)
 			self.position_x = x_pos
 			self.position_y = y_pos
+
 			if pclass == Classes.ClassesCount-1:
 				outcome = 2
 			else:
@@ -192,7 +195,7 @@ class Player(Unit):
 			self.position_y = 0
 			self.status = 0
 			outcome = -1
-		
+
 		return outcome
 
 
@@ -200,8 +203,8 @@ class Player(Unit):
 class Enemy(Unit):
 	EnemyCount = 0
 
-	def __init__(self, eclass, start_x,start_y,LevelEnv):
-		Unit.__init__(self, str(Enemy.EnemyCount), eclass, start_x, start_y,'E')
+	def __init__(self, ename,eclass, start_x,start_y,LevelEnv):
+		Unit.__init__(self, ename, eclass, start_x, start_y,'E')
 		flag = 0
 
 		if Environment.LevelMap[start_x][start_y] != 0:
@@ -210,6 +213,47 @@ class Enemy(Unit):
 				start_y = random.randrange(0, 8, 1)
 		LevelEnv.updateMap(-1,-1, start_x,start_y,self, self.uclass)
 		Enemy.EnemyCount += 1
+
+	def moveEnemy(self,direction,LevelEnv):
+		oldpos_x = self.position_x
+		oldpos_y = self.position_y
+		if direction == 1: #UP
+			if oldpos_x == 0:
+				return 1
+			else:
+				if LevelEnv.LevelMap[oldpos_x-1][oldpos_y]==0:
+					LevelEnv.updateMap(oldpos_x, oldpos_y, oldpos_x-1, oldpos_y, self, self.uclass)
+					self.position_x = oldpos_x-1
+					self.position_y = oldpos_y
+		elif direction ==2: #DOWN
+			if oldpos_x == Environment.mp_size_x-1:
+				return 1
+			else:
+				if LevelEnv.LevelMap[oldpos_x+1][oldpos_y]==0:
+					LevelEnv.updateMap(oldpos_x, oldpos_y, oldpos_x+1, oldpos_y, self, self.uclass)
+					self.position_x = oldpos_x+1
+					self.position_y = oldpos_y
+		elif direction ==3: #LEFT
+			if oldpos_y == 0:
+				return 1
+			else:
+				if LevelEnv.LevelMap[oldpos_x][oldpos_y-1]==0:
+					LevelEnv.updateMap(oldpos_x, oldpos_y, oldpos_x, oldpos_y-1, self, self.uclass)
+					self.position_x = oldpos_x
+					self.position_y = oldpos_y-1
+		elif direction ==4: #RIGHT
+			if oldpos_y == Environment.mp_size_y-1:
+				return 1
+			else:
+				if LevelEnv.LevelMap[oldpos_x][oldpos_y+1]==0:
+					LevelEnv.updateMap(oldpos_x, oldpos_y, oldpos_x, oldpos_y+1, self, self.uclass)
+					self.position_x = oldpos_x
+					self.position_y = oldpos_y+1
+
+		return 1
+
+
+
 
 #UnitClasses
 class Classes:
@@ -237,7 +281,7 @@ def get_key():
 def display_box(screen, message):
 	fontobject = pygame.font.Font(None,18)
 	titlefont = pygame.font.SysFont("arial", 20,True)
-	
+
 	pygame.draw.rect(screen, (0,0,0),
                    ((screen.get_width() / 2) - 100,
                     (screen.get_height() / 2) - 10,
@@ -249,14 +293,30 @@ def display_box(screen, message):
   	if len(message) != 0:
 		screen.blit(fontobject.render(message, 1, (255,255,255)),
                 	((screen.get_width() / 2) - 100, (screen.get_height() / 2) - 10))
+		pygame.draw.rect(screen,
+						 colorD['pawn'],
+						 [(screen.get_width() / 2)-10,
+						  10,
+						  WIDTH + MARGIN,
+						  HEIGHT + MARGIN])
+		pygame.draw.rect(screen,
+						 colorD['king'],
+						 [(screen.get_width() / 2)-10,
+						  10,
+						  WIDTH,
+						  HEIGHT])
+
+
+
 		screen.blit(pchessimageD['king'],((screen.get_width() / 2)-10,10))
+
 		screen.blit(titlefont.render("KINGMAKER", 1, (255, 0, 0)),
                 ((screen.get_width() / 2) - 60, 40))
-		
+
  	pygame.display.flip()
 
 def ask(screen, question):
-  
+
   pygame.font.init()
   current_string = []
   display_box(screen, question + ": " + string.join(current_string,""))
@@ -288,7 +348,7 @@ classesfile = open("classes.txt","r+")
 lines = [line.rstrip('\n') for line in classesfile]
 GameClasses = []
 i=0
-for line in lines:	
+for line in lines:
 
 	words = line.split(',')
 	temp = Classes(words[0],words[1],words[2],words[3])
@@ -380,16 +440,14 @@ P1 = Player(str(pname),pclass,px,py,Level)
 win = 0
 ex = 0
 ey = 0
-
 ec = 0
 
-
-Enemies = [[None] for i in range(eno)]
+Enemies = {}
 for i in range(eno):
 	ex = random.randrange(0, 8, 1)
 	ey = random.randrange(0, 8, 1)
 	enclass = Classes.UClassL[ec]
-	Enemies[i] = Enemy(enclass,px,py,Level)
+	Enemies[i] = Enemy(str(i),enclass,ex,ey,Level)
 	ec += 1
 Level.displayMap()
 result = 0
@@ -397,16 +455,20 @@ waiting = False
 #main loop
 while win==0 and not done:
 
-	for event in pygame.event.get():  
-		if event.type == pygame.QUIT: 
+	for event in pygame.event.get():
+		if event.type == pygame.QUIT:
 			done = True
 		if event.type == KEYDOWN:
 			result = P1.movePlayer(event.key,Level)
+			for e in Enemies:
+				if Enemies[e].status != 0:
+					direction = random.randrange(1,4,1)
+					Enemies[e].moveEnemy(direction,Level)
 		else:
 			result = 0
 
 	if result == -1:
-		
+
 		screen.fill(colorD['pawn'])
 		label1 = gamefont.render("You are not worthy! :( ;)", 1, (255,255,0))
 		label2 = gamefont.render("Press Enter key to exit...", 1, (255,255,0))
@@ -432,7 +494,7 @@ while win==0 and not done:
 						  HEIGHT + MARGIN])
 		pygame.draw.rect(screen,
 						 colorD['king'],
-						 [(MARGIN + WIDTH)+120, 
+						 [(MARGIN + WIDTH)+120,
 						  (MARGIN + HEIGHT)+5,
 						  WIDTH,
 						  HEIGHT])
