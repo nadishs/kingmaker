@@ -33,7 +33,7 @@ Kingmaker is a 1 player game (for now) implemented in Python using Pygame. In th
  - [ ] Improve Enemy AI to hard difficulty.  
 
 _____________  
-By Nadish Shajahan,
+By Nadish Shajahan  
 nadishshahjahan@gmail.com  
 [https://github.com/nadishs/](https://github.com/nadishs/)  
 A FISAT CHPC Assignment Project.  
