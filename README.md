@@ -8,16 +8,15 @@ _____
 #### A Python based simple 2D game made using Pygame.
 Kingmaker is a 1 player game (for now) implemented in Python using Pygame. In this game, a player starts as a pawn and can become the king.In order to achieve this, the player must defeat those of his same class to advance his own class. If he engages a unit of a class higher than his own, he will die (Gameover).  
 
-#### Instructions: 
- * Make sure that you have the Prerequisites(below).
- * Download .zip file from github
- * Unzip and then run kingmaker.py using: `python kingmaker.py`
-##### USE ARROW KEYS TO MOVE AND BECOME THE KING!
+#### Instructions:  
+ * Make sure that you have the Prerequisites(below).  
+ * Download .zip file from github  
+ * Unzip and then run kingmaker.py using: `python kingmaker.py`  
+##### USE ARROW KEYS TO MOVE AND BECOME THE KING!  
 _____
 1. Prerequisites:  
- * [Pygame](http://www.pygame.org/download.shtml)
- * Python
-
+ * [Pygame](http://www.pygame.org/download.shtml)  
+ * Python  
 2. Changelogs:   
  * Version 1.1:  
   + Added Enemy Movement  
