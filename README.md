@@ -6,7 +6,9 @@ Copyright (C) 2016 Nadish Shajahan
 _____
 #  :crown: KINGMAKER :crown:
 #### A Python based simple 2D game made using Pygame.
-Kingmaker is a 1 player game (for now) implemented in Python using Pygame. In this game, a player starts as a pawn and can become the king.In order to achieve this, the player must defeat those of his same class to advance his own class. If he engages a unit of a class higher than his own, he will die (Gameover).
+Kingmaker is a 1 player game (for now) implemented in Python using Pygame. In this game, a player starts as a pawn and can become the king.In order to achieve this, the player must defeat those of his same class to advance his own class. If he engages a unit of a class higher than his own, he will die (Gameover).  
+
+#### USE ARROW KEYS TO MOVE
 _____
 
 1. Changelogs:   
