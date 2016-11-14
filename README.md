@@ -1,8 +1,8 @@
-Kingmaker by Nadish Shajahan
-nadishshahjahan@gmail.com 
-https://github.com/nadishs 
-A Fisat CHPC Assignment Project. 
-Copyright (C) 2016 Nadish Shajahan 
+Kingmaker by Nadish Shajahan  
+nadishshahjahan@gmail.com  
+https://github.com/nadishs  
+A Fisat CHPC Assignment Project.  
+Copyright (C) 2016 Nadish Shajahan  
 _____
 #  :crown: KINGMAKER :crown:
 #### A Python based simple 2D game made using Pygame.
