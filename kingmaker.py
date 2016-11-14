@@ -326,7 +326,7 @@ gamefont = pygame.font.SysFont("monospace", 17)
 gamefont2 = pygame.font.SysFont("arial", 17)
 
 ###window icon
-icon = pygame.image.load(os.path.join("images","Chess_tile_kl.png"))
+icon = pygame.image.load(os.path.join("graphics","Chess_tile_kl.png"))
 pygame.display.set_icon(icon)
 
 ###begin
@@ -336,32 +336,32 @@ clock = pygame.time.Clock()
 
 pchessimageD = {}
 
-pchessimageD['pawn'] = pygame.image.load(os.path.join("images","Chess_tile_pd.png")).convert()
+pchessimageD['pawn'] = pygame.image.load(os.path.join("graphics","Chess_tile_pd.png")).convert()
 pchessimageD['pawn'] = pygame.transform.scale(pchessimageD['pawn'], (CWIDTH,CWIDTH))
-pchessimageD['rook'] = pygame.image.load(os.path.join("images","Chess_tile_rd.png")).convert()
+pchessimageD['rook'] = pygame.image.load(os.path.join("graphics","Chess_tile_rd.png")).convert()
 pchessimageD['rook']= pygame.transform.scale(pchessimageD['rook'], (CWIDTH,CWIDTH))
-pchessimageD['knight'] = pygame.image.load(os.path.join("images","Chess_tile_nd.png")).convert()
+pchessimageD['knight'] = pygame.image.load(os.path.join("graphics","Chess_tile_nd.png")).convert()
 pchessimageD['knight'] = pygame.transform.scale(pchessimageD['knight'], (CWIDTH,CWIDTH))
-pchessimageD['bishop'] = pygame.image.load(os.path.join("images","Chess_tile_bd.png")).convert()
+pchessimageD['bishop'] = pygame.image.load(os.path.join("graphics","Chess_tile_bd.png")).convert()
 pchessimageD['bishop'] = pygame.transform.scale(pchessimageD['bishop'], (CWIDTH,CWIDTH))
-pchessimageD['king'] = pygame.image.load(os.path.join("images","Chess_tile_kd.png")).convert()
+pchessimageD['king'] = pygame.image.load(os.path.join("graphics","Chess_tile_kd.png")).convert()
 pchessimageD['king'] = pygame.transform.scale(pchessimageD['king'], (CWIDTH,CWIDTH))
-pchessimageD['queen'] = pygame.image.load(os.path.join("images","Chess_tile_qd.png")).convert()
+pchessimageD['queen'] = pygame.image.load(os.path.join("graphics","Chess_tile_qd.png")).convert()
 pchessimageD['queen'] = pygame.transform.scale(pchessimageD['queen'], (CWIDTH,CWIDTH))
 
 echessimageD = {}
 
-echessimageD['pawn'] = pygame.image.load(os.path.join("images","Chess_tile_pl.png")).convert()
+echessimageD['pawn'] = pygame.image.load(os.path.join("graphics","Chess_tile_pl.png")).convert()
 echessimageD['pawn'] = pygame.transform.scale(echessimageD['pawn'], (CWIDTH,CWIDTH))
-echessimageD['rook'] = pygame.image.load(os.path.join("images","Chess_tile_rl.png")).convert()
+echessimageD['rook'] = pygame.image.load(os.path.join("graphics","Chess_tile_rl.png")).convert()
 echessimageD['rook'] = pygame.transform.scale(echessimageD['rook'], (CWIDTH,CWIDTH))
-echessimageD['knight'] = pygame.image.load(os.path.join("images","Chess_tile_nl.png")).convert()
+echessimageD['knight'] = pygame.image.load(os.path.join("graphics","Chess_tile_nl.png")).convert()
 echessimageD['knight'] = pygame.transform.scale(echessimageD['knight'], (CWIDTH,CWIDTH))
-echessimageD['bishop'] = pygame.image.load(os.path.join("images","Chess_tile_bl.png")).convert()
+echessimageD['bishop'] = pygame.image.load(os.path.join("graphics","Chess_tile_bl.png")).convert()
 echessimageD['bishop'] = pygame.transform.scale(echessimageD['bishop'], (CWIDTH,CWIDTH))
-echessimageD['king'] = pygame.image.load(os.path.join("images","Chess_tile_kl.png")).convert()
+echessimageD['king'] = pygame.image.load(os.path.join("graphics","Chess_tile_kl.png")).convert()
 echessimageD['king'] = pygame.transform.scale(echessimageD['king'], (CWIDTH,CWIDTH))
-echessimageD['queen'] = pygame.image.load(os.path.join("images","Chess_tile_ql.png")).convert()
+echessimageD['queen'] = pygame.image.load(os.path.join("graphics","Chess_tile_ql.png")).convert()
 echessimageD['queen'] = pygame.transform.scale(echessimageD['queen'], (CWIDTH,CWIDTH))
 
 ##object declarations
