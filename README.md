@@ -12,7 +12,7 @@ Kingmaker is a 1 player game (for now) implemented in Python using Pygame. In th
   * Make sure that you have the Prerequisites(below).  
   * Download .zip file from github  
   * Unzip and then run kingmaker.py using: `python kingmaker.py`  
-##### USE ARROW KEYS TO MOVE AND BECOME THE KING!  
+#### USE ARROW KEYS TO MOVE AND BECOME THE KING!  
 _____
 
 1. Prerequisites:  
