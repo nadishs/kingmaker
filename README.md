@@ -20,16 +20,16 @@ _____
  * Python  
 2. Changelogs:   
  * Version 1.1:  
- ... + Added Enemy Movement  
- ... + Fixed some bugs  
+ ...  Added Enemy Movement  
+ ...  Fixed some bugs  
  * Version 1.0:  
- ... + Replaced simple coloured grids with chess icons.  
- ... + Chess tile icons were taken from [Wikimedia Commons]( http://commons.wikimedia.org/wiki/File:Chess_tile_pd.png )  
- ... + Code Cleaned (All Code Comments removed).  
+ ...  Replaced simple coloured grids with chess icons.  
+ ...  Chess tile icons were taken from [Wikimedia Commons]( http://commons.wikimedia.org/wiki/File:Chess_tile_pd.png )  
+ ...  Code Cleaned (All Code Comments removed).  
  * Version 0.5:  
- ... + Base game with grids obtained.  
- ... + Added status menu on right.  
- ... + Name querying input screen inspired by Timothy Downs' Inputbox Module.  
+ ...  Base game with grids obtained.  
+ ...  Added status menu on right.  
+ ...  Name querying input screen inspired by Timothy Downs' Inputbox Module.  
 3. Aimed Improvements:   
  - [x] Add movement to enemies.  
  - [ ] Multiplayer.  
