@@ -15,8 +15,8 @@ Kingmaker is a 1 player game (for now) implemented in Python using Pygame. In th
   * **USE ARROW KEYS TO MOVE AND BECOME THE KING!**  
   * (Optional) Report bugs if found.  
 2. **Prerequisites:**  
- * [Pygame 1.9.1 release](http://www.pygame.org/download.shtml)  
- * Python 2.7.12
+ * [Pygame 1.9.1release](http://www.pygame.org/download.shtml)  
+ * Python 2.7.12release
 3. **Changelogs:**   
  * Version 1.1:  
  ...  Added Enemy Movement  
