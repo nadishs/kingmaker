@@ -1,6 +1,0 @@
-pawn,BLACK,10,2
-knight,WHITE,20,3
-bishop,GREEN,30,4
-rook,YELLOW,40,5
-queen,BLUE,50,6
-king,RED,60,7
