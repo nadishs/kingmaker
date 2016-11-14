@@ -8,26 +8,31 @@ _____
 #### A Python based simple 2D game made using Pygame.
 Kingmaker is a 1 player game (for now) implemented in Python using Pygame. In this game, a player starts as a pawn and can become the king.In order to achieve this, the player must defeat those of his same class to advance his own class. If he engages a unit of a class higher than his own, he will die (Gameover).  
 
-#### Instructions:  
+#### Instructions: 
+ * Make sure that you have the Prerequisites(below).
+ * Download .zip file from github
+ * Unzip and then run kingmaker.py using: `python kingmaker.py`
 ##### USE ARROW KEYS TO MOVE AND BECOME THE KING!
 _____
+1. Prerequisites:  
+ * [Pygame](http://www.pygame.org/download.shtml)
+ * Python
 
-1. Changelogs:   
-....* Version 1.1:  
-.......* Added Enemy Movement  
-.......* Fixed some bugs  
- 
-....* Version 1.0:  
-.......* Replaced simple coloured grids with chess icons.  
-.......* Chess tile icons were taken from [Wikimedia Commons]( http://commons.wikimedia.org/wiki/File:Chess_tile_pd.png )  
-.......* Code Cleaned (All Code Comments removed).  
-....* Version 0.5:  
-.......* Base game with grids obtained.  
-.......* Added status menu on right.  
-.......* Name querying input screen inspired by Timothy Downs' Inputbox Module.  
-2. Aimed Improvements:   
-	- [x] Add movement to enemies.  
-	- [ ] Multiplayer.  
-	- [ ] More Graphics (Maybe using Maptiles)  
-	- [ ] Add option for custom gridsize and enemy numbers(Just need some tweaks to the current sourcecode).  
-	- [ ] Improve Enemy AI to hard difficulty.
+2. Changelogs:   
+ * Version 1.1:  
+  + Added Enemy Movement  
+  + Fixed some bugs  
+ * Version 1.0:  
+  + Replaced simple coloured grids with chess icons.  
+  + Chess tile icons were taken from [Wikimedia Commons]( http://commons.wikimedia.org/wiki/File:Chess_tile_pd.png )  
+  + Code Cleaned (All Code Comments removed).  
+ * Version 0.5:  
+  + Base game with grids obtained.  
+  + Added status menu on right.  
+  + Name querying input screen inspired by Timothy Downs' Inputbox Module.  
+3. Aimed Improvements:   
+ - [x] Add movement to enemies.  
+ - [ ] Multiplayer.  
+ - [ ] More Graphics (Maybe using Maptiles)  
+ - [ ] Add option for custom gridsize and enemy numbers(Just need some tweaks to the current sourcecode).  
+ - [ ] Improve Enemy AI to hard difficulty.
