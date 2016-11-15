@@ -515,7 +515,6 @@ while win==0 and not done:
 
 		win = 1
 		break
-	os.system('clear')
 	screen.fill(colorD['pawn'])
 	Level.displayMap()
 	clock.tick(60)
